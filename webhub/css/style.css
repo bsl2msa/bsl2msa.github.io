@@ -1,0 +1,1728 @@
+/*==================================================
+BSL2 Maritime S.A.
+Luxury Maritime Website
+Part 1
+===================================================*/
+
+
+/*=========================
+GOOGLE FONTS
+=========================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+
+/*=========================
+CSS VARIABLES
+=========================*/
+
+:root{
+
+    --primary:#0B3C5D;
+    --secondary:#0F5E8C;
+    --gold:#C8A14D;
+    --gold-light:#E8C87A;
+
+    --white:#ffffff;
+    --light:#F8FAFC;
+    --gray:#D9E2EC;
+    --dark:#13293D;
+    --black:#08131D;
+
+    --overlay:rgba(0,0,0,.55);
+
+    --transition:.4s ease;
+
+    --shadow:0 20px 45px rgba(0,0,0,.20);
+
+    --radius:12px;
+
+    --max-width:1200px;
+
+}
+
+
+/*=========================
+RESET
+=========================*/
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    font-family:'Inter',sans-serif;
+    background:var(--light);
+    color:var(--dark);
+    overflow-x:hidden;
+    line-height:1.8;
+
+}
+
+
+img{
+
+    width:100%;
+    display:block;
+
+}
+
+
+a{
+
+    text-decoration:none;
+
+}
+
+
+ul{
+
+    list-style:none;
+
+}
+
+
+section{
+
+    padding:100px 8%;
+
+}
+
+
+.container{
+
+    width:100%;
+    max-width:var(--max-width);
+    margin:auto;
+
+}
+
+
+/*=========================
+TYPOGRAPHY
+=========================*/
+
+h1,
+h2,
+h3,
+h4{
+
+    font-family:'Cinzel',serif;
+    font-weight:700;
+    color:var(--dark);
+
+}
+
+
+h1{
+
+    font-size:4rem;
+
+}
+
+
+h2{
+
+    font-size:2.8rem;
+    margin-bottom:20px;
+
+}
+
+
+h3{
+
+    font-size:1.6rem;
+
+}
+
+
+p{
+
+    color:#44566C;
+    font-size:1rem;
+
+}
+
+
+/*=========================
+BUTTONS
+=========================*/
+
+.btn{
+
+    display:inline-block;
+
+    padding:15px 34px;
+
+    border-radius:40px;
+
+    transition:var(--transition);
+
+    font-weight:600;
+
+    letter-spacing:.5px;
+
+    margin:10px 10px 0 0;
+
+}
+
+
+.primary{
+
+    background:var(--gold);
+
+    color:var(--white);
+
+}
+
+
+.primary:hover{
+
+    background:#b38a37;
+
+    transform:translateY(-4px);
+
+}
+
+
+.secondary{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+
+.secondary:hover{
+
+    background:var(--secondary);
+
+    transform:translateY(-4px);
+
+}
+
+
+.outline{
+
+    border:2px solid white;
+
+    color:white;
+
+}
+
+
+.outline:hover{
+
+    background:white;
+
+    color:var(--primary);
+
+}
+
+
+/*=========================
+HEADER
+=========================*/
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:999;
+
+}
+
+
+/*=========================
+NAVIGATION
+=========================*/
+
+.navbar{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 8%;
+
+    backdrop-filter:blur(14px);
+
+    background:rgba(10,30,45,.35);
+
+    border-bottom:1px solid rgba(255,255,255,.1);
+
+}
+
+
+.logo img{
+
+    width:170px;
+
+}
+
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:35px;
+
+}
+
+
+.nav-links a{
+
+    color:white;
+
+    font-weight:500;
+
+    transition:var(--transition);
+
+    position:relative;
+
+}
+
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--gold);
+
+    transition:.4s;
+
+}
+
+
+.nav-links a:hover{
+
+    color:var(--gold);
+
+}
+
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+
+.menu-btn{
+
+    display:none;
+
+    color:white;
+
+    font-size:2rem;
+
+    cursor:pointer;
+
+}
+
+
+/*=========================
+HERO
+=========================*/
+
+.hero{
+
+    position:relative;
+
+    width:100%;
+
+    height:100vh;
+
+    background-image:url("../images/hero/ocean.jpg");
+
+    background-position:center;
+
+    background-size:cover;
+
+    background-repeat:no-repeat;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+}
+
+
+/*=========================
+OVERLAY
+=========================*/
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        to right,
+
+        rgba(5,20,35,.80),
+
+        rgba(5,20,35,.50),
+
+        rgba(5,20,35,.35)
+
+    );
+
+}
+
+
+/*=========================
+HERO CONTENT
+=========================*/
+
+.hero-content{
+
+    position:relative;
+
+    z-index:5;
+
+    width:100%;
+
+    max-width:900px;
+
+    padding:0 8%;
+
+    color:white;
+
+}
+
+
+.hero-content h3{
+
+    color:var(--gold);
+
+    font-size:1.3rem;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+
+}
+
+
+.hero-content h1{
+
+    color:white;
+
+    font-size:5rem;
+
+    line-height:1.1;
+
+    margin-bottom:20px;
+
+}
+
+
+.hero-content h2{
+
+    color:white;
+
+    font-size:2rem;
+
+    font-weight:400;
+
+    margin-bottom:30px;
+
+}
+
+
+.hero-content p{
+
+    color:#E5E7EB;
+
+    font-size:1.1rem;
+
+    max-width:650px;
+
+    margin-bottom:40px;
+
+}
+
+
+/*=========================
+BUTTON GROUP
+=========================*/
+
+.hero-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+}
+
+
+/*=========================
+SCROLL INDICATOR
+(Optional)
+=========================*/
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:35px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:3px;
+
+    height:60px;
+
+    background:rgba(255,255,255,.35);
+
+}
+
+
+/*=========================
+ANIMATIONS
+=========================*/
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+.hero-content h3{
+
+    animation:fadeUp .8s ease forwards;
+
+}
+
+
+.hero-content h1{
+
+    animation:fadeUp 1s ease forwards;
+
+}
+
+
+.hero-content h2{
+
+    animation:fadeUp 1.2s ease forwards;
+
+}
+
+
+.hero-content p{
+
+    animation:fadeUp 1.4s ease forwards;
+
+}
+
+
+.hero-buttons{
+
+    animation:fadeUp 1.6s ease forwards;
+
+}
+
+
+/*=========================
+CUSTOM SCROLLBAR
+=========================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+
+::-webkit-scrollbar-track{
+
+    background:#0A2033;
+
+}
+
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--gold);
+
+    border-radius:20px;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--gold-light);
+
+}
+
+/*==================================================
+PART 2
+ABOUT • PILLARS • QUEEN KOFI
+===================================================*/
+
+
+/*=========================
+SECTION TITLES
+=========================*/
+
+.section-title{
+
+    text-align:center;
+    margin-bottom:60px;
+
+}
+
+.section-title h2{
+
+    position:relative;
+    display:inline-block;
+    color:var(--primary);
+
+}
+
+.section-title h2::after{
+
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:-18px;
+    transform:translateX(-50%);
+
+    width:80px;
+    height:4px;
+
+    background:var(--gold);
+    border-radius:20px;
+
+}
+
+
+/*=========================
+ABOUT SECTION
+=========================*/
+
+.about{
+
+    background:white;
+
+}
+
+.about .container{
+
+    max-width:900px;
+    text-align:center;
+
+}
+
+.about p{
+
+    font-size:1.15rem;
+    line-height:2;
+    color:#526477;
+
+}
+
+
+/*=========================
+PILLARS
+=========================*/
+
+.pillars{
+
+    background:#f4f8fb;
+
+}
+
+.pillars .container{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+}
+
+
+/*=========================
+CARD
+=========================*/
+
+.card{
+
+    background:white;
+
+    padding:45px 35px;
+
+    border-radius:18
+
+    /*==================================================
+PART 3
+ROUTES • IMPACT • INVESTMENT • NEWS • FOOTER
+===================================================*/
+
+
+/*=========================
+MARITIME ROUTES
+=========================*/
+
+.routes{
+
+    background:linear-gradient(
+        180deg,
+        #0B3C5D 0%,
+        #102D45 100%
+    );
+
+    color:white;
+
+}
+
+.routes .container{
+
+    max-width:1200px;
+    text-align:center;
+
+}
+
+.routes h2{
+
+    color:white;
+    margin-bottom:20px;
+
+}
+
+.routes p{
+
+    color:#D8E5F1;
+    max-width:760px;
+    margin:0 auto 60px;
+
+}
+
+.map{
+
+    overflow:hidden;
+    border-radius:20px;
+    box-shadow:0 30px 60px rgba(0,0,0,.30);
+
+}
+
+.map img{
+
+    transition:.8s ease;
+
+}
+
+.map:hover img{
+
+    transform:scale(1.05);
+
+}
+
+
+/*=========================
+IMPACT SECTION
+=========================*/
+
+.impact{
+
+    background:white;
+
+}
+
+.impact .container{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:30px;
+
+}
+
+.counter{
+
+    background:var(--light);
+
+    padding:45px 30px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.06);
+
+}
+
+.counter:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+.counter h1{
+
+    font-size:3rem;
+
+    color:var(--gold);
+
+    margin-bottom:10px;
+
+}
+
+.counter p{
+
+    color:#5C6F82;
+
+    font-weight:600;
+
+    letter-spacing:.5px;
+
+}
+
+
+/*=========================
+INVESTMENT SECTION
+=========================*/
+
+.investment{
+
+    position:relative;
+
+    background:
+
+    linear-gradient(
+
+    rgba(5,20,35,.78),
+
+    rgba(5,20,35,.78)
+
+    ),
+
+    url("../images/investment-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    text-align:center;
+
+}
+
+.investment .container{
+
+    max-width:850px;
+
+}
+
+.investment h2{
+
+    color:white;
+
+    margin-bottom:25px;
+
+}
+
+.investment p{
+
+    color:#E2E8F0;
+
+    margin-bottom:45px;
+
+    font-size:1.1rem;
+
+}
+
+
+/*=========================
+NEWS
+=========================*/
+
+.news{
+
+    background:#F5F8FB;
+
+}
+
+.news h2{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.news-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+}
+
+.news article{
+
+    background:white;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    padding:35px;
+
+    transition:.4s;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.news article:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 25px 50px rgba(0,0,0,.16);
+
+}
+
+.news article h3{
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+    font-size:1.45rem;
+
+}
+
+.news article p{
+
+    margin-bottom:25px;
+
+    color:#607182;
+
+    line-height:1.8;
+
+}
+
+.news article::after{
+
+    content:"Read More →";
+
+    color:var(--gold);
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+
+/*=========================
+FOOTER
+=========================*/
+
+footer{
+
+    background:#08131D;
+
+    color:white;
+
+    padding:90px 8% 50px;
+
+}
+
+.footer-content{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.footer-content h2{
+
+    color:white;
+
+    margin-bottom:15px;
+
+}
+
+.footer-content>p{
+
+    color:#B5C4D4;
+
+    max-width:700px;
+
+    margin:0 auto 35px;
+
+}
+
+.socials{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:25px;
+
+    margin-bottom:45px;
+
+}
+
+.socials a{
+
+    color:white;
+
+    transition:.35s;
+
+    font-weight:500;
+
+}
+
+.socials a:hover{
+
+    color:var(--gold);
+
+}
+
+.copyright{
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    padding-top:30px;
+
+    color:#8EA0B2;
+
+    font-size:.95rem;
+
+}
+
+
+/*=========================
+SMALL DECORATIVE LINES
+=========================*/
+
+.routes h2::after,
+.news h2::after{
+
+    content:"";
+
+    display:block;
+
+    width:90px;
+
+    height:4px;
+
+    background:var(--gold);
+
+    margin:20px auto 0;
+
+    border-radius:20px;
+
+}
+
+
+/*=========================
+IMAGE EFFECTS
+=========================*/
+
+img{
+
+    transition:.5s ease;
+
+}
+
+.ship-image{
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+}
+
+.ship-image:hover img{
+
+    transform:scale(1.06);
+
+}
+
+.map{
+
+    position:relative;
+
+}
+
+.map::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+        rgba(255,255,255,.02),
+
+        rgba(255,255,255,.08)
+
+    );
+
+    pointer-events:none;
+
+}
+
+
+/*=========================
+SECTION SPACING
+=========================*/
+
+.about,
+.pillars,
+.queen-kofi,
+.routes,
+.impact,
+.investment,
+.news{
+
+    position:relative;
+
+}
+
+.about::before,
+.routes::before,
+.news::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    top:0;
+
+    width:120px;
+
+    height:3px;
+
+    background:var(--gold);
+
+    opacity:.15;
+
+}
+
+
+/*=========================
+HOVER TRANSITIONS
+=========================*/
+
+.card,
+.counter,
+.news article,
+.btn{
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease,
+        background .4s ease,
+        color .4s ease;
+
+}
+
+/*==================================================
+PART 4
+RESPONSIVE • MOBILE NAV • ANIMATIONS • UTILITIES
+===================================================*/
+
+
+/*=========================
+UTILITY CLASSES
+=========================*/
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-white{
+
+    color:var(--white);
+
+}
+
+.mt-1{margin-top:10px;}
+.mt-2{margin-top:20px;}
+.mt-3{margin-top:40px;}
+.mt-4{margin-top:60px;}
+
+.mb-1{margin-bottom:10px;}
+.mb-2{margin-bottom:20px;}
+.mb-3{margin-bottom:40px;}
+.mb-4{margin-bottom:60px;}
+
+
+/*=========================
+ACCESSIBILITY
+=========================*/
+
+:focus-visible{
+
+    outline:3px solid var(--gold);
+
+    outline-offset:4px;
+
+    border-radius:6px;
+
+}
+
+::selection{
+
+    background:var(--gold);
+    color:white;
+
+}
+
+
+/*=========================
+SMOOTH HOVER ANIMATIONS
+=========================*/
+
+.card,
+.counter,
+.news article,
+.ship-image,
+.map,
+.btn,
+.nav-links a{
+
+    will-change:transform;
+
+}
+
+
+/*=========================
+FLOATING ANIMATION
+=========================*/
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+.ship-image{
+
+    animation:float 6s ease-in-out infinite;
+
+}
+
+
+/*=========================
+FADE IN (Ready for JS)
+=========================*/
+
+.fade-in{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:1s ease;
+
+}
+
+.fade-in.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/*=========================
+MOBILE NAVIGATION
+=========================*/
+
+@media(max-width:992px){
+
+    .navbar{
+
+        padding:18px 6%;
+
+    }
+
+    .menu-btn{
+
+        display:block;
+
+        z-index:1001;
+
+    }
+
+    .nav-links{
+
+        position:absolute;
+
+        top:100%;
+
+        left:0;
+
+        width:100%;
+
+        background:rgba(8,19,29,.98);
+
+        backdrop-filter:blur(12px);
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:25px;
+
+        padding:35px 0;
+
+        display:none;
+
+    }
+
+    .nav-links.active{
+
+        display:flex;
+
+    }
+
+}
+
+
+/*=========================
+TABLET
+=========================*/
+
+@media(max-width:992px){
+
+    h1{
+
+        font-size:3.4rem;
+
+    }
+
+    h2{
+
+        font-size:2.2rem;
+
+    }
+
+    .hero{
+
+        text-align:center;
+
+    }
+
+    .hero-content{
+
+        margin:auto;
+
+    }
+
+    .hero-content p{
+
+        margin-left:auto;
+        margin-right:auto;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+    .queen-kofi .container{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .ship-info ul{
+
+        text-align:left;
+
+        display:inline-block;
+
+        margin:auto;
+
+    }
+
+}
+
+
+/*=========================
+LARGE MOBILE
+=========================*/
+
+@media(max-width:768px){
+
+    section{
+
+        padding:80px 6%;
+
+    }
+
+    h1{
+
+        font-size:2.8rem;
+
+    }
+
+    h2{
+
+        font-size:2rem;
+
+    }
+
+    .hero-content h2{
+
+        font-size:1.5rem;
+
+    }
+
+    .hero-content p{
+
+        font-size:1rem;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+        text-align:center;
+
+        margin-bottom:15px;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .pillars .container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .impact .container{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .news-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+/*=========================
+SMALL MOBILE
+=========================*/
+
+@media(max-width:576px){
+
+    .logo img{
+
+        width:135px;
+
+    }
+
+    h1{
+
+        font-size:2.2rem;
+
+    }
+
+    h2{
+
+        font-size:1.7rem;
+
+    }
+
+    .hero{
+
+        min-height:100vh;
+
+    }
+
+    .hero-content{
+
+        padding:0 5%;
+
+    }
+
+    .counter{
+
+        padding:30px 15px;
+
+    }
+
+    .counter h1{
+
+        font-size:2.2rem;
+
+    }
+
+    .impact .container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .socials{
+
+        flex-direction:column;
+
+        gap:18px;
+
+    }
+
+    footer{
+
+        padding:70px 6% 40px;
+
+    }
+
+}
+
+
+/*=========================
+REDUCE MOTION
+=========================*/
+
+@media(prefers-reduced-motion:reduce){
+
+    *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
+
+
+/*=========================
+PRINT STYLES
+=========================*/
+
+@media print{
+
+    header,
+    .hero-buttons,
+    .menu-btn,
+    footer{
+
+        display:none;
+
+    }
+
+    body{
+
+        background:white;
+
+        color:black;
+
+    }
+
+}
+
+
+/*=========================
+READY FOR STICKY NAV
+(JS WILL TOGGLE .scrolled)
+=========================*/
+
+header.scrolled .navbar{
+
+    background:rgba(8,19,29,.96);
+
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
+
+    transition:.4s ease;
+
+}
+
+
+/*=========================
+READY FOR ACTIVE LINKS
+=========================*/
+
+.nav-links a.active{
+
+    color:var(--gold);
+
+}
+
+.nav-links a.active::after{
+
+    width:100%;
+
+}
+
+
+/*=========================
+BUTTON RIPPLE PLACEHOLDER
+=========================*/
+
+.btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/*=========================
+IMAGE QUALITY
+=========================*/
+
+img{
+
+    image-rendering:auto;
+
+    object-fit:cover;
+
+}
+
+.back-to-top:hover{
+
+    transform:translateY(-6px);
+
+    background:var(--gold-light);
+
+}
+
+.back-to-top{
+
+    z-index:999;
+
+}
+/*=========================
+END OF STYLESHEET
+=========================*/
